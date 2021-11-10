@@ -1,0 +1,22 @@
+# jemdoc: menu{MENU}{index.html}{}
+= Mohammad Ali Heydari
+
+~~~
+{}{img_left}{avatar.jpg}{alt text}{120px}{}{avatar.jpg}{300}
+: {Student of Computer Science at [https://aut.ac.ir/en/ AUT]}
+: {Research Assistant at RIMLab at [http://www.en.sharif.edu/ Sharif University of Technology] under supervision of [https://scholar.google.com/citations?user=pRyJ6FkAAAAJ&hl=en Prof. Rohban]}
+~~~
+
+~~~
+Just solving an online learning problem: life
+~~~
+
+== Research Interests
+- Reinforcement Learning
+- Meta-Learning
+- Active Learning
+- Representation Learning
+
+== Contact
+- Phone: (+98) 911 581 4641
+- Email: [mailto:m.a.heydari@aut.ac.ir m.a.heydari@aut.ac.ir]
