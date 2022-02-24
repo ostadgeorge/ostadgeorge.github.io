@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <script type='text/javascript' src='https://cdn.scaledrone.com/scaledrone.min.js'></script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <script src="https://cdn.plyr.io/3.6.12/plyr.js"></script>
+  <link rel="stylesheet" href="https://cdn.plyr.io/3.6.12/plyr.css" />
+  <style>
+    body {
+      /* display: flex; */
+      height: 100vh;
+      margin: 0;
+      align-items: center;
+      justify-content: center;
+      padding: 0 50px;
+      font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+
+    .webcam {
+      display: inline;
+      /* max-width: calc(50% - 100px); */
+      max-width: 200px;
+      /* margin: 0 50px; */
+      /* box-sizing: border-box; */
+      border-radius: 2px;
+      /* padding: 0; */
+      box-shadow: rgba(156, 172, 172, 0.2) 0px 2px 2px, rgba(156, 172, 172, 0.2) 0px 4px 4px, rgba(156, 172, 172, 0.2) 0px 8px 8px, rgba(156, 172, 172, 0.2) 0px 16px 16px, rgba(156, 172, 172, 0.2) 0px 32px 32px, rgba(156, 172, 172, 0.2) 0px 64px 64px;
+    }
+
+    .copy {
+      /* position: fixed; */
+      /* top: 10px; */
+      /* left: 50%; */
+      transform: translateX(-50%);
+      font-size: 16px;
+      color: rgba(0, 0, 0, 0.5);
+    }
+
+    .container {
+      margin: 50px auto;
+      width: 800px;
+    }
+    video::-webkit-media-controls-fullscreen-button {display: inline;}
+    video::-webkit-media-controls-play-button {display: none;}
+    video::-webkit-media-controls-timeline {display: none;}
+    video::-webkit-media-controls-current-time-display{display: none;}
+    video::-webkit-media-controls-time-remaining-display {display: none;}
+    video::-webkit-media-controls-mute-button {display: none;}
+    video::-webkit-media-controls-toggle-closed-captions-button {display: none;}
+    video::-webkit-media-controls-volume-slider {display: none;}
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <video controls id="video_tag" src="#" width="800px">
+      <!-- <source id="video_src" src="./jeyran.mp4"> -->
+      <!-- <source src="https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-576p.mp4"> -->
+      <!-- <source src="jeyran.mp4" type="video/mp4"> -->
+
+
+      <!-- Caption files -->
+      <!-- <track kind="captions" label="English" srclang="en"
+            src="https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-HD.en.vtt" default> -->
+    </video>
+    <br>
+    <input type="file" id="video_file">
+    <button id="play">play</button>
+    <button id="pause">pause</button>
+    <button id="calibrate">calibrate</button>
+    <button id="jump_up">jump 29sec up</button>
+    <button id="jump_back">jump 7sec back</button>
+  </div>
+  <br>
+  <hr>
+  <video class="webcam" id="localVideo" autoplay muted></video>
+  <video class="webcam" id="remoteVideo" autoplay></video>
+
+  <!-- Plyr resources and browser polyfills are specified in the pen settings -->
+  <script>
+    // Change the second argument to your options:
+    // https://github.com/sampotts/plyr/#options
+    // var player = new Plyr('#video_tag', { captions: { active: true }, controls: ['fullscreen'] });
+
+    // Expose player so it can be used from the console
+    // window.player = player;
+
+    var video_tag = document.getElementById("video_tag");
+    // var video_src = document.getElementById("video_src");
+    var video_file = document.getElementById("video_file");
+    video_file.addEventListener('change', (event) => {
+      console.log(video_file.value);
+      video_tag.src = URL.createObjectURL(video_file.files[0]);
+    })
+    var is_paused = 0;
+    // window.setInterval(function () {
+    //   console.log(video_tag.currentTime);
+    //   // if(is_paused == 1) {
+    //   //     video_tag.play();
+    //   //     is_paused = 0;
+    //   // } else {
+    //   //     video_tag.pause();
+    //   //     is_paused = 1;
+    //   // }
+    // }, 1000);
+
+  </script>
+  <script src="vtog_script.js"></script>
+</body>
+
+</html>
